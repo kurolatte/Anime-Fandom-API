@@ -2,9 +2,9 @@
 this is a demo repo folder
 
 
-- this a bullet
+- Exercise 1
 
-## heading 2
+## Heading 2
 
 **bold**
 
