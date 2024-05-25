@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Anime API</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+
+</head>
+
+<body background="https://pics.freeartbackgrounds.com/fullhd/Dark_Clouds_in_the_Sky_Background-1086.jpg">
+
+  <div class="header">
+  <h1>The<strong>Anime</strong>Fandom</h1>
+    </div>
+    
+    </ul><div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="chat.html">Forum</a>
+      <a href="video.html">Videos</a>
+    </div><br>
+    
+    </center><label for="animeTitle">Anime Title:</label>
+    <input type="text" id="animeTitle" name="animeTitle">
+    <button type="button" onclick="fetchData()" class="button" role="button">Search</button>
+      
+  <div class="column">
+    <h2 id="animeTitle"></h2>
+    <h3 id="animeImage"></h3>
+    <h4 id="animeTitle_English"></h4>
+    <p id="animeEpisodes"></p>
+    <p id="animeRank"></p>
+    <p id="animeGenres"></p>
+    <p id="animeYear"></p>
+    <p id="animeSynopsis"></p>
+    </div>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
