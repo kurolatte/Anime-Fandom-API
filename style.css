@@ -8,18 +8,63 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.anime-card {
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+.anime-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.anime-card a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.anime-card h3 {
+  margin-top: 0;
+}
 
 /* Anime description */
-p {
+.animeResults {
   font-family: Spectral, serif;
   font-size: 20px;
   margin: auto;
-  width: 65%;
+  width: 70%;
   padding: 10px;
   float: center-right;
   text-align: justify;
 }
-/* Title */
+
+/* Manga description */
+.mangaResults {
+  font-family: Spectral, serif;
+  font-size: 20px;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  float: center-right;
+  text-align: justify;
+}
+
+/* Anime & Manga Image */
+.left-image {
+  float: left;
+  size: 225 319px;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+/* Header */
   h1 {
     color: #C5C6C7;
     font-size: 36px;
@@ -29,9 +74,7 @@ p {
     strong {
       color: #66FCF1;
     }
-      column {
-        float: left;
-      }
+
 /* search button */
 .button {
   font-family: "Open Sans", sans-serif;
@@ -61,16 +104,12 @@ p {
       padding: 0.25em 0.75em;
     }
   }
-/* "Anime Title:" */
-label {
-  font-size: 21px;
-}
+
 /* text box */
 input {
   padding: 4px 8px;
   border-radius: 4px;
 }
-
 
 /* Style the header */
 .header {
@@ -98,16 +137,6 @@ input {
 .topnav a:hover {
   background-color: #ddd;
   color: #45A29E;
-}
-
-h3 {
-  float: left;
-  width: 33.3%
-}
-
-#username {
-  margin: auto;
-  text-align: left;
 }
 
 .comment {
@@ -173,6 +202,103 @@ h3 {
     padding: 0 15px;
   }
 }
-form {
+
+/* forum.html comment section */
+.newsletter {
+  background-color: #17252A;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #66FCF1;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+#comment-form {
   text-align: left;
+}
+
+#comment-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #17252A;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.username-position {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.comment-position {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 0 10px #66FCF1;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.comment-body {
+  padding: 10px;
+}
+
+.comment-body p {
+  margin-bottom: 10px;
+}
+
+.comment-no-shadow {
+  box-shadow: none; /* Remove box shadow */
+}
+
+/* video.html chat section */
+.chat-section {
+  width: 30%;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #17252A;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #66FCF1;
+}
+
+.chat-list {
+  margin-top: 20px;
+}
+
+.chat {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #66FCF1;
+}
+
+.chat:last-child {
+  border-bottom: none;
 }

@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Anime API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime & Manga API</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
 
 </head>
@@ -18,27 +19,53 @@
     
     </ul><div class="topnav">
       <a href="index.html">Home</a>
-      <a href="chat.html">Forum</a>
+      <a href="forum.html">Forum</a>
       <a href="video.html">Videos</a>
     </div><br>
-    
-    </center><label for="animeTitle">Anime Title:</label>
-    <input type="text" id="animeTitle" name="animeTitle">
-    <button type="button" onclick="fetchData()" class="button" role="button">Search</button>
-      
-  <div class="column">
-    <h2 id="animeTitle"></h2>
+  
+  <h1>Spring 2024 Anime</h1>
+  <div id="current-season"></div>
+  <script src="season.js"></script>
+  
+  <h1>Top Airing Anime</h1>
+  <div id="top-anime"></div>
+  <script src="topanime.js"></script>
+  
+    <label for="animeTitle">Anime Title:</label>
+    <input type="text" id="animeTitle" placeholder="Search for an anime...">
+    <button type="button" onclick="fetchData()" class="button" role="button">Search</button><br><br>
+     
+    <label for="mangaTitle">Manga Title:</label>
+    <input type="text" id="mangaTitle" placeholder="Search for a manga...">
+    <button type="button" onclick="fetchMangaData()" class="button" role="button">Search</button>
+
     <h3 id="animeImage"></h3>
+  <div class="animeResults">
+    <h2 id="animeTitle"></h2>
     <h4 id="animeTitle_English"></h4>
     <p id="animeEpisodes"></p>
     <p id="animeRank"></p>
     <p id="animeGenres"></p>
     <p id="animeYear"></p>
+    <p id="animeStatus"></p>
     <p id="animeSynopsis"></p>
     </div>
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+
+    <h3 id="mangaImage"></h3>
+    <div class="mangaResults">
+      <h2 id="mangaTitle"></h2>
+      <h4 id="mangaTitle_English"></h4>
+      <p id="mangaVolumes"></p>
+      <p id="mangaChapters"></p>
+      <p id="mangaGenres"></p>
+      <p id="mangaSynopsis"></p>
+      </div>
+
+      <footer>
+        <p>&copy; MyAnimeList / Jikan API</p>
+      </footer>
+  
+  <script src="server.js"></script>
 </body>
 
 </html>

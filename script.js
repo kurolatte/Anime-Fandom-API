@@ -1,32 +1,4 @@
-function fetchData() {
-  const animeTitle = document.getElementById("animeTitle").value;
-  fetch(`https://api.jikan.moe/v4/anime?q=${animeTitle}&limit=1`)
-    .then((response) => {
-      if (!response.ok) {
-        if (response.status === 404) {
-          alert("Anime not found. Please enter a valid Anime title.");
-        } else {
-          throw new Error("Could not fetch data.");
-        }
-        return;
-      }
-      return response.json();
-    })
-    .then((result) =>  {
-      console.log(result)
-      let anime = result.data[0];
-      document.getElementById("animeTitle").innerHTML = `<h2>${anime.title}</h2>`;
-      document.getElementById("animeTitle_English").innerHTML = `<h4>${anime.title_english || "N/A"}</h4>`;
-      document.getElementById("animeEpisodes").innerHTML = `<p>Episodes: ${anime.episodes}</p>`;
-      document.getElementById("animeRank").innerHTML = `<p>Rank# ${anime.rank}</p>`;
-      document.getElementById("animeGenres").innerHTML = `<h5>Genres:</h5><ul>${anime.genres.map(genre => `<li>${genre.name}</li>`).join("")}</ul>`;
-      document.getElementById("animeYear").innerHTML = `<p>Year: ${anime.year || "N/A"}</p>`;
-      document.getElementById("animeImage").innerHTML = `<img src="${anime.images.webp.large_image_url}" alt="${anime.title}">`;
-      document.getElementById("animeSynopsis").innerHTML = `<h4>Synopsis:</h4><p>${anime.synopsis || "N/A"}</p>`;
-    })
-    .catch((error) => console.error(error));
-}
-
+// forum.html comment function
 $(document).ready(function() {
   // Get the comments from local storage or initialize an empty array
   let comments = JSON.parse(localStorage.getItem("comments")) || [];
@@ -74,4 +46,45 @@ $(document).ready(function() {
     $('#username').val('');
     $('#comment').val('');
   });
+});
+
+// video.html chat function
+$(document).ready(function() {
+  // Get the chat input and submit button
+  const chatInput = $('#chat-input');
+  const chatSubmit = $('#chat-submit');
+
+  // Get the chat list element
+  const chatList = $('.chat-list');
+
+  // Array to store chat messages
+  const chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+
+  // Function to display chat history
+  function displayChatHistory() {
+    chatHistory.forEach(message => {
+      const chatElement = $('<div class="chat"></div>');
+      chatElement.text(message);
+      chatList.append(chatElement);
+    });
+  }
+  // Handle chat submission
+  chatSubmit.on('click', function(event) {
+    event.preventDefault();
+    const chatText = chatInput.val();
+    if (chatText !== '') {
+      // Add the message to the chat history
+      chatHistory.push(chatText);
+      localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+
+      // Create a new chat element
+      const chatElement = $('<div class="chat"></div>');
+      chatElement.text(chatText);
+      chatList.append(chatElement);
+      chatInput.val(''); // Clear the input field
+    }
+  });
+
+  // Display chat history on page load
+  displayChatHistory();
 });
