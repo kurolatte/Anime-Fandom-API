@@ -1,4 +1,5 @@
 # Anime Fandom API
+https://kurolatte.github.io/Anime-Fandom-API/
 I am using Jikan Public REST API for my Anime API project. <br>
 **If you're an anime fan like me, join me. Dive into Discussions, Uncover Hidden Gems, and Connect with Fellow Fans.** 
 
