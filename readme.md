@@ -65,6 +65,7 @@ No issue, other than the features that has not been implemented as mentioned.
 
 ## Media
 * The background image used in this site was obtained from [freeartbackgrounds](https://freeartbackgrounds.com/)
+* The videos used in this site was obtained from Youtube
 
 ## Acknowledgements
 * I received inspiration for this project from [MyAnimeList](https://myanimelist.net/)
